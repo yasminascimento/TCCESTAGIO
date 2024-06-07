@@ -1,0 +1,99 @@
+
+/* file:///C:/xamp/htdocs/estagio/application/cache/index.html*/
+
+
+
+body {
+    background-color: #3BB398;
+    margin: 0; /* Remove as margens padrão */
+    padding: 0; /* Remove os preenchimentos padrão */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 100vh; /* Define a altura como 100% da altura da viewport */
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+}
+
+.conteudo {
+    display: flex; /* Ativa o modelo flexível */
+    width: 80%; /* Define uma largura para o conteúdo */
+    height: 80%; /* Define uma altura para o conteúdo */
+    background-color: white; /* Fundo branco */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adiciona uma sombra */
+}
+
+.texto {
+    flex: 1; /* Ocupa o espaço disponível */
+    display: flex; /* Ativa o modelo flexível */
+    flex-direction: column; /* Coloca os itens em coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    padding: 20px;
+    color: white; /* Cor do texto branco */
+    background-color: #3BB398; /* Fundo colorido para diferenciar do lado direito */
+}
+
+.imagem {
+    flex: 1; /* Ocupa o espaço disponível */
+    display: flex; /* Ativa o modelo flexível */
+    align-items: flex-end; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    background-color: white; /* Fundo branco */
+}
+
+.botao, .botao2 {
+    background-color: white; /* Cor de fundo branca */
+    color: #888; /* Cor do texto cinza */
+    border: 1px solid white; /* Borda branca */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Borda arredondada */
+    font-size: 25px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor do mouse */
+    outline: none; /* Remove a borda ao clicar */
+    display: block; /* Altera o comportamento para ficar um abaixo do outro */
+    margin: 10px 0; /* Espaçamento entre os botões */
+    width: 50%; /* Define a largura para 70% */
+}
+
+.botao:hover, .botao2:hover {
+    background-color: #f0f0f0; /* Cor de fundo um pouco mais escura ao passar o mouse */
+}
+
+img {
+   
+    width: 100%;
+    height:60%; /* Largura máxima da imagem */
+   /* Mantém a proporção da imagem */
+}
+
+
+
+.input-container {
+    position: relative;
+    margin-bottom: 15px;
+    display: flex;
+}
+.input-container i {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    
+}
+.input-container input {
+    padding-left: 35px;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px; /* Borda arredondada */
+}
+.senha-container i {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    border-radius: 10px; /* Borda arredondada */
+}
