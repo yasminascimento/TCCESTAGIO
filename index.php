@@ -77,8 +77,8 @@
 
         .olho {
             position: absolute;
-            right: 30px;
-            top: 50%;
+            right: 10px;
+            top: 90%;
             transform: translateY(-50%);
             cursor: pointer;
         }
@@ -139,6 +139,7 @@
             width: 100%;
             margin-top: 20px;
         }
+    
 
         /*não mexer nos tamanhos da @media ass:yasmin// qualquer coisa me chame*/
         /* Media Queries */
@@ -257,7 +258,7 @@
                     <div class="input-container">
                         <input type="password" class="form-control" placeholder="Digite sua senha" name="senhaTxt" id="senhaTxt" maxlength="30" />
                         <div class="olho">
-                            <i id="btn-senha" onclick="mostrarSenha()"><img src="" alt=""></i>
+                            <i id="btn-senha" onclick="mostrarSenha()"><img src="https://img.icons8.com/?size=100&id=85028&format=png&color=000000" width="35px" height="35px"></i>
                         </div>
                     </div>
                 </div>
@@ -326,15 +327,22 @@
         }
       });
     });
-
+  
     function mostrarSenha() {
-      var senhaInput = document.getElementById("senhaTxt");
-      if (senhaInput.type === "password") {
+    var senhaInput = document.getElementById("senhaTxt");
+    var btnSenha = document.getElementById("btn-senha");
+    var imgOlho = btnSenha.querySelector("img");
+
+    if (senhaInput.type === "password") {
         senhaInput.type = "text";
-      } else {
+        imgOlho.src = "https://img.icons8.com/?size=100&id=85035&format=png&color=000000"; // Altere para a imagem de olho fechado
+    } else {
         senhaInput.type = "password";
-      }
+        imgOlho.src = "https://img.icons8.com/?size=100&id=85028&format=png&color=000000"; // Altere para a imagem de olho aberto
     }
+}
+
+    
   </script>
 </body>
 
