@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Exemplo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .menu-lateral {
+            width: 200px;
+            background-color:  #3BB398;
+            color: white;
+            height: 100vh;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .menu-lateral ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+        .menu-lateral li {
+            margin: 20px 0;
+        }
+        .menu-lateral li i {
+            font-size: 24px;
+        }
+        .menu-lateral .menu-rodape {
+            margin-top: auto;
+        }
+        .conteudo {
+            flex: 1;
+            padding: 20px;
+        }
+        .barra-pesquisa {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .barra-pesquisa input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            margin-right: 10px;
+            border-radius: 10px;
+        }
+        .barra-pesquisa input[type="submit"] {
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .info-direita {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .calendario {
+            margin-top: 10px;
+        }
+        .card {
+            background-color:  #3BB398;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .cards-centro {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .tabela {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tabela th, .tabela td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .tabela th {
+            background-color:  #3BB398;
+            color: white;
+        }
+        :root{
+           color:#b38add
+        }
+        .calendario{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:'Times New Roman', Times, serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+
+        }
+        .container{
+
+            position: relative;
+            width: 4000px;;
+            min-height: 300px;
+            left: 30px;
+            padding: 5PX;
+            display: flex;
+            border-radius: 10px;
+
+        }
+        .left{
+            width: 60%;
+            padding: 20px;
+        }
+        .calendar{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            color:white;
+            border-radius: 5px;
+            background-color:pink ;
+        }
+
+        .calendar ::before, 
+        after{
+            content:"";
+            position: absolute;
+            top:50%;
+            left: 50%;
+            width: 12px;
+            height: 97%;
+            border-radius: 0 5px 5px 0;
+            background-color: #ddd;
+            transform:translateY(-50%);
+
+        }
+.calendar ::before{
+    height: 94%;
+    left: calc (100% + 12px);
+    background-color: red;
+}
+
+.calendar .month {
+    width: 100%;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;}
+
+.calendar .month .prev:hover, .calendar .month .next:hover{
+    color: pink;
+}
+
+.calendar .weekdays{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    font-size: 1rem;
+    font-weight:500;
+    text-transform: capitalize;
+}
+
+.calendar  .weekdays div{
+    width: 14.28%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+       
+    </style>
+</head>
+<body>
+    <div class="menu-lateral">
+        <div>
+            <h2>Menu</h2>
+            <ul>
+                <li><i class="fas fa-home"></i></li>
+                <li><i class="fas fa-user-graduate"></i></li>
+                <li><i class="fas fa-file-import"></i></li>
+                <li><i class="fas fa-chart-bar"></i></li>
+                <li><i class="fas fa-file-alt"></i></li>
+            </ul>
+        </div>
+        <div class="menu-rodape">
+            <ul>
+                <li><i class="fas fa-cogs"></i> Ferramenta</li>
+                <li><i class="fas fa-sign-out-alt"></i> Logoff</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="conteudo">
+        <div class="barra-pesquisa">
+            <input type="text" placeholder="Buscar">
+            <input type="submit" value="Buscar">
+        </div>
+        <div class="info-direita">
+            <div>
+                <span>Data de hoje: <script>document.write(new Date().toLocaleDateString());</script></span>
+            </div>
+            <div class="calendario2" id="calendario2"></div>
+        </div>
+        <div class="cards-centro">
+            <div class="card">Card 1</div>
+            <div class="card">Card 2</div>
+            <div class="card">Card 3</div>
+            <div class="card">Card 4</div>
+        </div>
+        <div class="cards-laterais">
+            <div class="card">Card 5</div>
+            <div class="card">Card 6</div>
+        </div>
+        <table class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome do Aluno</th>
+                    <th>Email</th>
+                    <th>Período</th>
+                    <th>Status da Documentação</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>João Silva</td>
+                    <td>joao.silva@email.com</td>
+                    <td>2023.2</td>
+                    <td>Completo</td>
+                </tr>
+                <tr>
+                    <td>Maria Oliveira</td>
+                    <td>maria.oliveira@email.com</td>
+                    <td>2023.1</td>
+                    <td>Incompleto</td>
+                </tr>
+                <!-- Adicione mais linhas conforme necessário -->
+            </tbody>
+        </table>
+    </div>
+<div class="calendario">
+<div class="container">
+
+<div class="left">
+    <div class="calendar">
+        <div class="month">
+            <i class="fa fa-angle-left prev"></i>
+            <div class="date">november 2022 </div>
+            <i class="fa fa-angle-right next"></i>
+        </div>
+        <div class="weekdays"></div>
+
+        <div>domingo</div>
+        <div>segunda</div>
+        <div>terça</div>
+        <div>quarta</div>
+        <div>quinta</div>
+        <div>sexta</div>
+        <div>sabado</div>
+
+    </div>
+    </div>
+
+    <div class="days">
+    <div class="day">1</div> 
+    <div class="day">2</div> 
+    <div class="day">3</div> 
+    <div class="day">4</div> 
+    <div class="day">5</div> 
+    <div class="day">6</div> 
+    <div class="day">7</div> 
+    <div class="day">8</div> 
+    <div class="day">9</div> 
+    <div class="day">10</div> 
+    <div class="day">11</div> 
+    <div class="day">12</div> 
+    <div class="day">13</div> 
+    <div class="day">14</div> 
+    <div class="day">15</div> 
+    <div class="day">16</div> 
+    <div class="day">17</div> 
+    <div class="day">18</div> 
+    <div class="day">19</div> 
+    <div class="day">20</div> 
+    <div class="day">21</div> 
+    <div class="day">22</div> 
+    <div class="day">23</div> 
+    <div class="day">24</div> 
+    </div>
+
+</div>
+</div>
+</div>
