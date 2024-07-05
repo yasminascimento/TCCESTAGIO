@@ -1,5 +1,36 @@
+/* sidebar*/
 document.getElementById('open_btn').addEventListener('click', function () {
     document.getElementById('sidebar').classList.toggle('open-sidebar');
+});
+
+/* barra de pesquisa*/ 
+let boxBuscar = document.querySelector('.search-box');
+let lupa = document.querySelector('.icon-search');
+let btnFechar = document.querySelector('.btn-close');
+
+lupa.addEventListener('click', ()=> {
+    boxBuscar.classList.add('ativar')
+})
+
+btnFechar.addEventListener('click', ()=> {
+    boxBuscar.classList.remove('ativar')
+})
+
+/* data */
+document.addEventListener("DOMContentLoaded", function() {
+    const dataBox = document.getElementById('data-box');
+    
+    const meses = [
+        'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 
+        'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+    ];
+
+    const hoje = new Date();
+    const dia = hoje.getDate();
+    const mes = meses[hoje.getMonth()];
+    const ano = hoje.getFullYear();
+
+    dataBox.textContent = `${dia < 10 ? '0' + dia : dia} ${mes}, ${ano}`;
 });
 
 
