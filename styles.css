@@ -1,5 +1,7 @@
+/* Importação da fonte */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* Reset e configuração da fonte */
 * {
     margin: 0;
     padding: 0;
@@ -7,19 +9,22 @@
     font-family: 'Poppins', sans-serif;
 }
 
+
 body {
     display: flex;
     min-height: 100vh;
-    background-color: white;
+    background-color: rgb(253, 253, 253);
 }
+
 
 main {
     padding: 20px;
-    position: fixed;
+    position: relative;
     z-index: 1;
     padding-left: calc(82px + 20px);
 }
 
+/* Estilo da sidebar */
 #sidebar {
     display: flex;
     flex-direction: column;
@@ -33,10 +38,12 @@ main {
     z-index: 2;
 }
 
+/* Conteúdo da sidebar */
 #sidebar_content {
     padding: 12px;
 }
 
+/* Estilo do usuário */
 #user {
     display: flex;
     align-items: center;
@@ -44,24 +51,25 @@ main {
     margin-bottom: 24px;
 }
 
+/* foto do usuário*/
 #user_avatar {
     width: 50px;
     height: 50px;
     object-fit: cover;
     border-radius: 20px;
 }
-
+/* informações usuário*/
 #user_infos {
     display: flex;
     flex-direction: column;
     color: white;
 }
 
-/* tamanho da fonte segundo texto */
 #user_infos span:last-child {
     font-size: 12px;
 }
 
+/* Estilo dos itens da sidebar */
 #side_items {
     display: flex;
     flex-direction: column;
@@ -94,16 +102,16 @@ main {
     width: 20px;
     height: 20px;
 }
-
-/* regras para o efeito de hover */
+/* alteração de cor o hover - icon e description*/
 .side-item:hover a {
-    color: black; /* Cor do texto ao passar o mouse */
+    color: black; 
 }
 
 .side-item:hover a i {
-    color: black; /* Cor do ícone ao passar o mouse */
+    color: black; 
 }
 
+/* Estilo do logout */
 #logout {
     padding: 12px;
 }
@@ -119,24 +127,23 @@ main {
     text-align: start;
     cursor: pointer;
     background-color: transparent;
-    color: white; /* Cor inicial do texto */
+    color: white;
 }
 
 #logout_btn i {
-    color: white; /* Cor inicial do ícone */
+    color: white;
 }
 
-/*  regras para o botão de logout */
 #logout_btn:hover {
     background-color: #e3e9f7;
-    color: black; /* Cor do texto ao passar o mouse */
+    color: black;
 }
 
 #logout_btn:hover i {
-    color: black; /* Cor do ícone ao passar o mouse */
+    color: black;
 }
 
-/* botão para abrir o menu */
+/* Estilo do botão de abrir menu */
 #open_btn {
     position: absolute;
     top: 30px;
@@ -149,8 +156,7 @@ main {
     border: none;
     cursor: pointer;
 }
- 
-/* transição suave para abrir e fechar o menu*/
+
 #open_btn_icon {
     transition: transform .3s ease;
 }
@@ -183,9 +189,156 @@ main {
     gap: 14px;
 }
 
-.search-box{
-   position: absolute; 
-   width: 10%;
-   height: 50%;
-   border-radius: 30px;
+/* Estilo da caixa de pesquisa */
+.search-box {
+    width: 80px;
+    height: 50px;
+    background-color: #f8f7f7;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    transition: .5s;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-left: 100px
 }
+/* largura da caixa de pesquisa*/
+.search-box.ativar {
+    width: 400px;
+}
+
+.search-box .icon-search, .search-box .btn-close {
+    min-width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-bottom: 30px;
+}
+
+.search-box .btn-close i {
+    font-size: 15px;
+    margin-left: 15px;
+    color: #737575;
+}
+
+.search-box .icon-search i {
+    font-size: 20px;
+    color: #737575;
+}
+
+.search-box .input-search {
+    position: absolute;
+    left: 80px;
+    width: calc(100% - 120px);
+    height: 100%;
+    line-height: 53px;
+}
+
+.search-box .input-search input {
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    background-color: #f8f7f7;
+}
+
+/* Estilo da caixa de data */
+#data-box {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: #faeb1e;
+    border-radius: 20px 0px 0px 20px;
+    width: 250px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    color: #505050;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Estilo da caixa de métricas */
+#metricas-box {
+    background-color: #117a6c;
+    border-radius: 12px;
+    padding: 20px;
+    width: 450px;
+    height: 20px;
+    text-align: center;
+    position: fixed;
+    top: 150px;
+    left: 150px;
+}
+
+#metricas-box h2 {
+    margin: 0;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Estilo do container de cards */
+ .card-container {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 220px; /* Ajuste de margem */
+   
+}
+
+ .card-container .card-one {
+    display: flex;
+    background-color: #3BB398;
+    border-radius: 12px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.card-container-two {
+    
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 150px; /* Ajuste de margem */
+   
+}
+
+.card-container .card-two {
+    display: flex;
+    background-color: #3BB398;
+    border-radius: 12px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: bold;
+    width: 200px;
+    height: 100px;
+    text-align: center;
+}
+
+.card-container .card-one h3, .card-container-two .card-two h3 {
+    
+    margin: 0;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+ .card-container .card-one:hover, .card-container-two .card-two:hover{
+    background-color: #117a6c;
+}
+
+
+
+
+
