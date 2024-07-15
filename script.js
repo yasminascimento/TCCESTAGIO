@@ -493,3 +493,26 @@ timeHour = timeHour % 12 || 12;
 time = timeHour + ":" + timeMin + " " + timeFormat;
 return time;
 }
+/*script importadados*/
+document.getElementById('uploadBtn').addEventListener('click', function() {
+    document.getElementById('fileInput').click();
+});
+
+document.getElementById('fileInput').addEventListener('change', function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const fileName = file.name;
+        const fileSize = file.size;
+        const fileType = file.type;
+
+        const validExtensions = ['csv', 'xls', 'xlsx'];
+        const fileExtension = fileName.split('.').pop().toLowerCase();
+
+        if (!validExtensions.includes(fileExtension)) {
+            alert('Por favor, selecione um arquivo com extensão CSV, XLS ou XLSX.');
+        } else {
+            alert(`Arquivo selecionado: ${fileName}\nTamanho: ${fileSize} bytes\nTipo: ${fileType}`);
+          
+        }
+    }
+});
