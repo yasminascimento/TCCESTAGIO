@@ -9,341 +9,246 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: #3BB398;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: "DM Sans", sans-serif;
-        }
-
-        .conteudo {
-            width: 100%;
-            max-width: 1000px;
-            height: 75%; /* altura de todo o conteúdo */
-            display: flex;
-            background-color: white;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2); /* a intensidade de toda a borda transparente que envolve todo o conteudo */
-            border-radius: 20px;
-            overflow: hidden;
-            position: relative;
-            padding: 0px;
-            border: 0px solid transparent;
-        }
-
-        .texto {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px;
-            background-color: #3BB398;
-            color: white;
-            border-radius: 10px;
-        }
-
-        .imagem {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            border-radius: 10px;
-        }
-
-        .imagem img {
-            width: 100%;
-            height: auto;
-        }
-
-        .form-control {
-            background-color: white;
-            padding: 15px; /* mexe nos tamanhos dos botões */
-            font-size: 18px;
-            border-radius: 10px;
-            width: 100%;
-            border: 1px solid #ccc;
-            margin-bottom: -40px; /* espaçamento entre os botões */
-            margin-top: 60px; /* espaçamento entre o conecte-se e os botões */
-        }
-
-        .olho {
-            position: absolute;
-            right: 10px;
-            top: 90%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        .btnentrar {
-            background-color: white;
-            color: #888;
-            border-radius: 5px;
-            padding: 13px;
-            font-size: 16px;
-            cursor: pointer;
-            border: 1px solid #ccc;
-        }
-
-        .btnentrar:hover {
-            background-color: #f0f0f0;
-        }
-
-        .recuperar-senha-link {
-            color: white;
-            text-decoration: none;
-            margin-top: 20px;
-            align-self: flex-end;
-        }
-
-        .recuperar-senha-link:hover {
-            text-decoration: underline;
-        }
-
-        .input-container {
-            position: relative;
-            margin-bottom: 25px;
-            width: 100%;
-        }
-
-        .input-container input {
-            width: 100%;
-            padding: 15px 40px 15px 15px;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            font-size: 18px;
-            color: #888;
-            outline: none;
-        }
-
-        .senha-container i {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            right: 15px;
-            transform: translateY(-50%);
-            font-size: 20px;
-        }
-
-        .btn-container {
-            display: flex;
-            justify-content: flex-end;
-            width: 100%;
-            margin-top: 20px;
-        }
-    
-
-        /*não mexer nos tamanhos da @media ass:yasmin// qualquer coisa me chame*/
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .conteudo {
-                flex-direction: column;
-                height: auto;
-                max-width: 90%;
-            }
-
-            .texto, .imagem {
-                border-radius: 0;
-            }
-
-            .imagem {
-                display: none;
-            }
-
-            .btn-container {
-                justify-content: center;
-            }
-        }
-        /*não mexer nos tamanhos da @media ass:yasmin// qualquer coisa me chame*/
-        @media (max-width: 480px) {
-            .texto {
-                padding: 20px;
-            }
-
-            .form-control {
-                padding: 10px;
-                font-size: 16px;
-           
-            }
-            
-            .btnentrar {
-                padding: 10px;
-                font-size: 14px;
-            }
-
-            .recuperar-senha-link {
-                margin-top: 10px;
-                font-size: 14px;
-            }
-        }
-
-        /*não mexer nos tamanhos da @media ass:yasmin// qualquer coisa me chame*/
-        @media (min-width: 1000px) {
-            .conteudo {
-                max-width: 1200px;
-                height: 80%;
-            }
-
-            .texto {
-                padding: 60px;
-            }
-
-            .form-control {
-                padding: 20px;
-                font-size: 20px;
-                margin-top: 50px;
-            }
-
-            .btnentrar {
-                padding: 15px;
-                font-size: 18px;
-                margin-left: 20px;
-            }
-
-            .recuperar-senha-link {
-                font-size: 16px;
-            }
-        }
-
-        /*não mexer nos tamanhos da @media*/
-        @media (min-width: 1700px) {
-            .conteudo {
-                max-width: 1200px;
-                height: 80%;
-            }
-
-            .texto {
-                padding: 60px;
-            }
-
-            .form-control {
-                padding: 20px;
-                font-size: 20px;
-                margin-top: 80px;
-            }
-
-            .btnentrar {
-                padding: 15px;
-                font-size: 18px;
-            }
-
-            .recuperar-senha-link {
-                font-size: 16px;
-            }
-        }
-    </style>
-</head>
-
 <body>
-    <div class="conteudo">
-        <div class="texto">
-            <h1 style="margin-bottom: 20px;">Conecte-se</h1>
-            <form>
-                <div class="form-group mb-8">
-                    <label for="loginTxt" class="control-label"></label>
-                    <div class="input-container">
-                        <input class="form-control usuario1" placeholder="Digite seu usuário" name="loginTxt" id="loginTxt" maxlength="15" />
-                    </div>
-                </div>
-                <div class="form-group mb-8">
-                    <label for="senhaTxt" class="control-label"></label>
-                    <div class="input-container">
-                        <input type="password" class="form-control" placeholder="Digite sua senha" name="senhaTxt" id="senhaTxt" maxlength="30" />
-                        <div class="olho">
-                            <i id="btn-senha" onclick="mostrarSenha()"><img src="https://img.icons8.com/?size=100&id=85028&format=png&color=000000" width="35px" height="35px"></i>
+
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="https://st.depositphotos.com/1049680/59300/i/600/depositphotos_593003402-stock-photo-hispanic-man-beard-wearing-business.jpg" id="user_avatar" alt="Avatar">
+
+                <p id="user_infos">
+                    <span class="item-description">
+                        nome do professor
+                    </span>
+                    <span class="item-description">
+                        curso responsável
+                    </span>
+                </p>
+            </div>
+
+            <ul id="side_items">
+                <li class="side-item active">
+                    <a href="#">
+                        <i class="fa-solid fa-house"></i>
+                        <span class="item-description">
+                            Home
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-user-graduate"></i>
+                        <span class="item-description">
+                            Aluno
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-regular fa-clipboard"></i>
+                        <span class="item-description">
+                            Relatório
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-file-import"></i>
+                        <span class="item-description">
+                            Importar Dados
+                        </span>
+                    </a>
+                </li>
+
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Configurações
+                        </span>
+                    </a>
+                </li>
+            </ul>
+
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Sair
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+
+        <div class="search-box">
+            <div class="icon-search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div><!--icon-search-->
+
+            <div class="input-search">
+                <input type="text" name="" id="" placeholder="Buscar">
+            </div><!--input-search-->
+
+            <div class="btn-close">
+                <i class="fa-regular fa-circle-xmark"></i>
+            </div><!--btn-close-->
+        </div><!--search-box-->
+
+        <div id="data-box"> </div> <!-- date-box-->
+
+        <div id="metricas-box">
+    <h2>Métricas de Gestão de Estágio</h2>
+</div>
+
+<div class="card-container">
+    <div class="card-one">
+        <h3>Card 1</h3>
+        <p>Conteúdo do Card 1</p>
+    </div>
+    <div class="card-one">
+        <h3>Card 2</h3>
+        <p>Conteúdo do Card 2</p>
+    </div>
+</div> <!-- Fechando .card-container -->
+
+<!-- segunda coluna de card -->
+<div class="card-container-two">
+    <div class="card-two">
+        <h3>Card 1</h3>
+        <p>Conteúdo do Card 1</p>
+    </div>
+    <div class="card-two">
+        <h3>Card 2</h3>
+        <p>Conteúdo do Card 2</p>
+    </div>
+</div> <!-- Fechando .card-container-two -->
+
+<div id="metricas-boxs">
+    <h2>Performace de entrega dos alunos</h2>
+</div>
+
+<div class="tabela">
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>EMAIL</th>
+                <th>PERÍODO</th>
+                <th>DOCUMENTO</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="https://st5.depositphotos.com/4678277/65847/i/600/depositphotos_658476394-stock-photo-photo-toothy-beaming-lovely-girl.jpg" alt="Daniela Lima"> Daniela Lima</td>
+                <td><a href="mailto:daniela.lima@fatec.sp.gov.br">daniela.lima@fatec.sp.gov.br</a></td>
+                <td>6°</td>
+                <td><span class="status pendente">Pendente</span></td>
+            </tr>
+            <tr>
+                <td><img src="https://st3.depositphotos.com/12985790/15794/i/600/depositphotos_157947226-stock-photo-man-looking-at-camera.jpg" alt="Daniel Lima"> Daniel Lima</td>
+                <td><a href="mailto:daniel.lima@fatec.sp.gov.br">daniel.lima@fatec.sp.gov.br</a></td>
+                <td>6°</td>
+                <td><span class="status completo">Completo</span></td>
+            </tr>
+            <tr>
+                <td><img src="https://st4.depositphotos.com/1036367/31538/i/600/depositphotos_315389664-stock-photo-half-length-shot-pleasant-looking.jpg" alt="Maisa Santos"> Maisa Santos</td>
+                <td><a href="mailto:maisa.santos@fatec.sp.gov.br">maisa.santos@fatec.sp.gov.br</a></td>
+                <td>6°</td>
+                <td><span class="status completo">Completo</span></td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="ver-mais">Ver mais</button>
+</div> <!-- Fechando .table -->
+
+
+
+        <main>
+            <div class="container">
+                <div class="left">
+                    <div class="calendar">
+                        <div class="month">
+                            <i class="fa fa-angle-left prev"></i>
+                            <div class="date">novembro 2022</div>
+                            <i class="fa fa-angle-right next"></i>
+
+                        </div>
+                        <div class="weekdays">
+                            <div>dom</div>
+                            <div>seg</div>
+                            <div>ter</div>
+                            <div>qua</div>
+                            <div>qui</div>
+                            <div>sex</div>
+                            <div>sab</div>
+
+                        </div>
+
+                        <div class="days"></div>
+                        <div class="goto-today">
+                            <div class="goto">
+                                <input type="text" placeholder="mm/yyyy" class="date-input" />
+                                <button class="goto-btn">Go</button>
+                            </div>
+                            <button class="today-btn">Today</button>
                         </div>
                     </div>
                 </div>
-                <a href="recuperarsenha.html" class="recuperar-senha-link">Recuperar senha</a>
-                <div class="btn-container">
-                    <button type="button" id="loginBtn" class="btnentrar">Entrar</button>
-                </div>
-            </form>
-        </div>
-        <div class="imagem">
-            <img src="https://setting.com.br/wp-content/uploads/2018/04/ferramentas-gestao-de-projetos.jpg" alt="Descrição da imagem">
-        </div>
-    </div>
 
-    <script type="text/javascript">
-        function mostrarSenha() {
-            var senhaInput = document.getElementById("senhaTxt");
-            if (senhaInput.type === "password") {
-                senhaInput.type = "text";
-            } else {
-                senhaInput.type = "password";
-            }
-        }
-    </script>
+
+                <div class="right">
+                    <div class="today-date">
+                        <div class="event-day">wed</div>
+                        <div class="event-date">12th december 2022</div>
+                    </div>
+                    <div class="events"></div>
+                    <div class="add-event-wrapper">
+                        <div class="add-event-header">
+                            <div class="title">Adicionar</div>
+                            <i class="fas fa-times close"></i>
+                        </div>
+                        <div class="add-event-body">
+                            <div class="add-event-input">
+                                <input type="text" placeholder="Event Name" class="event-name" />
+                            </div>
+                            <div class="add-event-input">
+                                <input type="text" placeholder="Event Time From" class="event-time-from" />
+                            </div>
+                            <div class="add-event-input">
+                                <input type="text" placeholder="Event Time To" class="event-time-to" />
+                            </div>
+                        </div>
+                        <div class="add-event-footer">
+                            <button class="add-event-btn">Adicionar Evento</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="add-event">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+
+        </main>
+
+        <script src="../script.js"></script>
 </body>
 
 </html>
 
-  <script src="<?php echo base_url("assets/js/jquery-3.6.0.min.js"); ?>" type="text/javascript"></script>
-  <script src="<?php echo base_url("assets/js/sweetalert2.all.min.js"); ?>" type="text/javascript"></script>
-  <script src="<?php echo base_url("assets/js/bootstrap.min.js"); ?>" type="text/javascript"></script>
 
-  <script type="text/javascript" charset="utf-8">
-    var base_url = "<?= base_url(); ?>"
-    $(document).ready(function() {
-      $('#loginBtn').on('click', async function(e) {
-        e.preventDefault();
-
-        const config = {
-          method: "post",
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            usuario: $('#loginTxt').val(),
-            senha: $('#senhaTxt').val()
-          })
-        };
-
-        const request = await fetch(base_url + 'professor/logarProfessor', config);
-        const response = await request.json();
-
-        if (response.codigo == 1) {
-          Swal.fire({
-            title: 'Acesso liberado',
-            text: 'Bem-vindo ao sistema de Estágio.',
-            icon: 'success'
-          });
-        } else {
-          Swal.fire({
-            title: 'Atenção!',
-            text: response.codigo + ' - ' + response.msg,
-            icon: 'error'
-          });
-        }
-      });
-    });
-  
-    function mostrarSenha() {
-    var senhaInput = document.getElementById("senhaTxt");
-    var btnSenha = document.getElementById("btn-senha");
-    var imgOlho = btnSenha.querySelector("img");
-
-    if (senhaInput.type === "password") {
-        senhaInput.type = "text";
-        imgOlho.src = "https://img.icons8.com/?size=100&id=85035&format=png&color=000000"; // Altere para a imagem de olho fechado
-    } else {
-        senhaInput.type = "password";
-        imgOlho.src = "https://img.icons8.com/?size=100&id=85028&format=png&color=000000"; // Altere para a imagem de olho aberto
-    }
-}
-
-    
-  </script>
+</main>
+<link rel="stylesheet" href="../style.css">
+<script src="src/javascript/script.js"></script>
 </body>
 
 </html>
