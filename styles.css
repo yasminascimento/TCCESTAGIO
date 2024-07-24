@@ -1329,3 +1329,284 @@ border-radius: 10px;
 
 }
 }
+
+/* ESTILO PáGINA ALUNO*/
+/* Ocultar elementos */
+
+
+/* Container principal */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Container de conteúdo */
+.container {
+    width: 620px;
+    background-color: #f1efef;
+    padding: 30px;
+    border-radius: 5px;
+    margin-right: 50px;
+    margin-top: 110px;
+}
+
+/* Estilo das abas principais */
+.tab-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #0c9287;
+    gap: 10px;
+}
+
+.tab-box .tab-btn {
+    font-size: 15px;
+    font-weight: 600;
+    color: rgb(99, 99, 99);
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+    flex: 1;
+    text-align: center;
+    max-width: 150px;
+}
+
+.tab-box .tab-btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0c9287;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.tab-box .tab-btn:hover::after,
+.tab-box .tab-btn.active::after {
+    transform: scaleX(1);
+}
+
+.tab-box:hover .tab-btn:hover {
+    border-radius: 10px 10px 0 0;
+    background-color: #0c9287;
+    color: white;
+}
+
+/* Estilo das abas secundárias */
+.sub-tab-btn {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(99, 99, 99);
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.sub-tab-btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #0c9287;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.sub-tab-btn:hover::after,
+.sub-tab-btn.active::after {
+    transform: scaleX(1);
+}
+
+/* Estilo da seção de desempenho */
+.performance-title {
+    text-align: center;
+}
+
+.performance-title h2 {
+    color: rgb(44, 43, 43);
+    font-size: 20px;
+    background-color: #0c92873f;
+    padding: 5px;
+    margin: 20px auto 0;
+    border-radius: 5px;
+    width: 50%;
+}
+
+/* Estilo da área de dados do aluno */
+.data-student {
+    display: flex;
+    align-items: flex-start;
+}
+
+.avatar {
+    width: 150px;
+    height: 200px;
+    border-radius: 10%;
+    margin-right: 20px;
+    margin-top: 5%;
+}
+
+.details {
+    margin-top: 3%;
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.info-block {
+    margin-bottom: 15px;
+    flex: 1;
+    margin-right: 20px;
+}
+
+.info-block:last-child {
+    margin-right: 0;
+}
+
+.info {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Estilo das abas de conteúdo */
+.tab-content {
+    position: fixed;
+    top: 115px;
+    right: -300px;
+    width: 340px;
+    height: 450px;
+    background-color: #f1efef;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    display: none;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.tab-content::-webkit-scrollbar {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+    right: 20px;
+}
+
+.tab-content h2 {
+    margin: 0;
+    color: rgb(99, 99, 99);
+    font-size: 20px;
+    text-align: center;
+    background-color: #0c928744;
+    padding: 10px;
+    border-radius: 5px 5px 0 0;
+}
+
+/* Estilo dos formulários */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 10px 5px;
+    color: rgb(99, 99, 99);
+}
+
+input {
+    padding: 8px;
+    margin: 0 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: calc(100% - 20px);
+    box-sizing: border-box;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+button[type="submit"], .cancel-btn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #0c9287;
+    color: white;
+    border: none;
+}
+
+button[type="submit"]:hover {
+    background-color: #0a7b6a;
+}
+
+.cancel-btn {
+    background: transparent;
+    color: #0c9287;
+    border: none;
+}
+
+/* Estilo dos botões dentro das abas "Documento" e "Atendimento" */
+.documento-tabs, .atendimento-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #0c9287;
+}
+
+.sub-tab-content {
+    display: none;
+}
+
+.sub-tab-content.active {
+    display: block;
+}
+
+.sub-tab-content h3 {
+    color: rgb(99, 99, 99);
+    text-align: center;
+}
+
+/* Estilo da lista de documentos */
+.document-list {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.document-list label {
+    display: flex;
+    justify-content: space-between; /* Alinha o texto e a caixa de seleção nas extremidades */
+    align-items: center; /* Alinha verticalmente o texto e a caixa de seleção */
+    margin-bottom: 10px;
+    color: rgb(99, 99, 99);
+}
+
+.document-list input[type="checkbox"] {
+    margin-left: 10px; /* Espaço entre o texto e a caixa de seleção */
+}
+
+
