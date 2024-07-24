@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Aluno</title>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="container">
+            <!-- Botões de navegação das abas principais -->
+            <div class="tab-box">
+                <button class="tab-btn" data-tab="historico" onclick="openTab('historico')">Histórico</button>
+                <button class="tab-btn" data-tab="editar" onclick="openTab('editar')">Editar</button>
+                <button class="tab-btn" data-tab="documento" onclick="openTab('documento')">Documento</button>
+                <button class="tab-btn" data-tab="atendimento" onclick="openTab('atendimento')">Atendimento</button>
+                <button class="tab-btn" data-tab="desativar" onclick="openTab('desativar')">Desativar</button>
+            </div>
+
+            <!-- Informações do aluno -->
+            <div class="data-student">
+                <img src="images/avatar.jpg" alt="Avatar do estudante" class="avatar">
+                <div class="details">
+                    <div class="info-row">
+                        <div class="info-block">
+                            <p>Nome:</p>
+                            <p class="info">Maria Clara</p>
+                        </div>
+                        <div class="info-block">
+                            <p>Email:</p>
+                            <p class="info">maria.clara@example.com</p>
+                        </div>
+                        <div class="info-block">
+                            <p>Telefone:</p>
+                            <p class="info">(11) 1234-5678</p>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-block">
+                            <p>Data de Nascimento:</p>
+                            <p class="info">01/01/2000</p>
+                        </div>
+                        <div class="info-block">
+                            <p>Curso:</p>
+                            <p class="info">Sistemas para Internet</p>
+                        </div>
+                        <div class="info-block">
+                            <p>Situação:</p>
+                            <p class="info">Ativo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Título da seção de desempenho -->
+            <div class="performance-title">
+                <h2>Desempenho</h2>
+                <p>Gráficos de performance aqui</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Conteúdo das abas interativas -->
+    <div id="historico" class="tab-content hidden">
+        <h2>Histórico do Aluno</h2>
+        <p>Histórico de atividade vindo do backend</p>
+    </div>
+
+    <div id="editar" class="tab-content hidden">
+        <h2>Editar Dados</h2>
+        <form id="edit-form" onsubmit="return confirmSaveChanges();">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" value="Maria Clara">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="maria.clara@example.com">
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" value="(11) 1234-5678">
+
+            <label for="data-nascimento">Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" name="data-nascimento" value="2000-01-01">
+
+            <label for="curso">Curso:</label>
+            <input type="text" id="curso" name="curso" value="Sistemas para Internet">
+
+            <label for="situacao">Situação:</label>
+            <input type="text" id="situacao" name="situacao" value="Ativo">
+
+            <div class="form-buttons">
+                <button type="submit">Salvar</button>
+                <button type="button" class="cancel-btn" onclick="closeEditForm()">Cancelar</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="documento" class="tab-content hidden">
+        <h2>Documentos do Aluno</h2>
+        <!-- Botões de navegação das sub-abas dentro da aba "Documento" -->
+        <div class="documento-tabs">
+            <button class="sub-tab-btn" data-sub-tab="consultar-doc" onclick="openSubTab('consultar-doc')">Consultar</button>
+            <button class="sub-tab-btn" data-sub-tab="editar-doc" onclick="openSubTab('editar-doc')">Adicionar</button>
+            <button class="sub-tab-btn" data-sub-tab="excluir-doc" onclick="openSubTab('excluir-doc')">Excluir</button>
+        </div>
+
+        <div id="consultar-doc" class="sub-tab-content hidden">
+            <h3>Consultar Documentos</h3>
+            <p>Listagem de documentos...</p>
+        </div>
+
+        <div id="editar-doc" class="sub-tab-content hidden">
+            <h3>Adicionar Documentos</h3>
+            <form id="editar-doc-form">
+                <div class="document-list">
+                    <label><input type="checkbox" name="documentos" value="documento1"> Documento 1</label>
+                    <label><input type="checkbox" name="documentos" value="documento2"> Documento 2</label>
+                    <label><input type="checkbox" name="documentos" value="documento3"> Documento 3</label>
+                    <label><input type="checkbox" name="documentos" value="documento4"> Documento 4</label>
+                </div>
+                <button type="submit">Salvar</button>
+            </form>
+        </div>
+
+        <div id="excluir-doc" class="sub-tab-content hidden">
+            <h3>Excluir Documentos</h3>
+            <p>Formulário para excluir documentos...</p>
+        </div>
+    </div>
+
+    <div id="atendimento" class="tab-content hidden">
+        <h2>Atendimentos do Aluno</h2>
+        <!-- Botões de navegação das sub-abas dentro da aba "Atendimento" -->
+        <div class="atendimento-tabs">
+            <button class="sub-tab-btn" data-sub-tab="consultar" onclick="openSubTab('consultar')">Consultar</button>
+            <button class="sub-tab-btn" data-sub-tab="adicionar" onclick="openSubTab('adicionar')">Adicionar</button>
+            <button class="sub-tab-btn" data-sub-tab="excluir" onclick="openSubTab('excluir')">Excluir</button>
+        </div>
+
+        <div id="consultar" class="sub-tab-content hidden">
+            <h3>Consultar Atendimentos</h3>
+            <p>Listagem de atendimentos...</p>
+        </div>
+
+        <div id="adicionar" class="sub-tab-content hidden">
+            <h3>Adicionar Atendimento</h3>
+            <form id="adicionar-form">
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" name="descricao">
+
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data">
+
+                <button type="submit">Adicionar</button>
+            </form>
+        </div>
+
+        <div id="excluir" class="sub-tab-content hidden">
+            <h3>Excluir Atendimento</h3>
+            <p>Formulário para excluir atendimentos...</p>
+        </div>
+    </div>
+
+    <div id="desativar" class="tab-content hidden">
+        <h2>Desativar Aluno</h2>
+        <p></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
