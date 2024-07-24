@@ -516,3 +516,59 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
         }
     }
 });
+
+// FUNÇÃO DA PAGINA ALUNO
+// Função para abrir uma aba específica
+function openTab(tabId) {
+    const tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    
+    document.getElementById(tabId).classList.add('active');
+    
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    tabBtns.forEach(btn => btn.classList.remove('active'));
+    
+    document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+}
+
+// Função para fechar o formulário de edição
+function closeEditForm() {
+    document.getElementById('editar').classList.remove('active');
+}
+
+// Função para confirmar e salvar alterações
+function confirmSaveChanges() {
+    if (confirm('Você deseja salvar as alterações?')) {
+        alert('Alterações salvas com sucesso!');
+        closeEditForm();
+        openTab('historico');
+    }
+    return false; // Cancela o envio do formulário
+}
+
+// Função para abrir uma sub-aba específica
+function openSubTab(subTabId) {
+    const subTabs = document.querySelectorAll('.sub-tab-content');
+    subTabs.forEach(tab => tab.classList.remove('active'));
+
+    document.getElementById(subTabId).classList.add('active');
+
+    const subTabBtns = document.querySelectorAll('.sub-tab-btn');
+    subTabBtns.forEach(btn => btn.classList.remove('active'));
+
+    document.querySelector(`[data-sub-tab="${subTabId}"]`).classList.add('active');
+}
+
+// Adiciona evento de submissão ao formulário de documentos
+document.getElementById('editar-doc-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const selectedDocuments = Array.from(document.querySelectorAll('#editar-doc-form input[type="checkbox"]:checked'))
+        .map(checkbox => checkbox.value);
+
+    // Faça algo com os documentos selecionados, por exemplo, enviar para o backend
+    console.log('Documentos selecionados:', selectedDocuments);
+
+    // POP UP FEEDBACK
+    alert('Documentos salvos com sucesso!');
+});
