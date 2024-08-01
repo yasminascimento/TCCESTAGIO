@@ -1330,6 +1330,408 @@ border-radius: 10px;
 }
 }
 
+
+/*página de entrar como já responsiva */ 
+                /*página de entrar como já responsiva */
+                                      /*página de entrar como já responsiva */
+                                                                       /*página de entrar como já responsiva */
+
+
+
+
+
+        .entrarcomo {
+            background-color: #3BB398;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .conteudo {
+            width: 100%;
+            max-width: 1000px;
+            height: 75%;
+            display: flex;
+            background-color: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            padding: 0px;
+            border: 0px solid transparent;
+            
+        }
+
+        .texto {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background-color: #3BB398;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .imagem {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .imagem img {
+            width: 100%;
+            height: auto;
+        }
+
+        .btnentrar {
+            background-color: white;
+            color: #888;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+            width: 80%; /* Increased width */
+            max-width: 300px; /* Set a maximum width */
+            text-align: center;
+        }
+
+        .btnentrar:hover {
+            background-color: #f0f0f0;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .conteudo {
+                flex-direction: column;
+                height: auto;
+                max-width: 90%;
+            }
+
+            .texto,
+            .imagem {
+                border-radius: 0;
+            }
+
+            .imagem {
+                display: none;
+            }
+
+            .btn-container {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .texto {
+                padding: 20px;
+            }
+
+            .btnentrar {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+
+        @media (min-width: 1000px) {
+            .conteudo {
+                max-width: 1200px;
+                height: 80%;
+            }
+
+            .texto {
+                padding: 60px;
+            }
+
+            .btnentrar {
+                padding: 15px;
+                font-size: 18px;
+            }
+            .btn-container {
+                margin-top: 50px;
+            }
+
+        }
+        @media (min-width: 1700px) {
+            .conteudo {
+                max-width: 1200px;
+                height: 80%;
+            }
+
+            .texto {
+                padding: 60px;
+            }
+
+            .btnentrar {
+                padding: 15px;
+                font-size: 18px;
+            }
+        }
+
+/*finalização da página de entrar como já responsiva */ 
+                /* finalização da página de entrar como já responsiva */
+                                      /* finalização da página de entrar como já responsiva */
+                                                                       /* finalização da página de entrar como já responsiva */
+
+/**************************************************************************************************************************************************/
+
+/**************************************************************************************************************************************************/
+
+/**************************************************************************************************************************************************/
+ /*página de conectar já responsiva */ 
+                /*página de conectar já responsiva  */
+                                      /*página de conectar já responsiva */
+                                                                       /*página de conectar já responsiva */
+
+      
+
+
+        .conectar {
+            background-color: #3BB398;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: "DM Sans", sans-serif;
+        }
+
+        .conteudoconectese {
+            width: 100%;
+            max-width: 1000px;
+            height: 75%; /* altura de todo o conteúdo */
+            display: flex;
+            background-color: white;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.2); /* a intensidade de toda a borda transparente que envolve todo o conteudo */
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            padding: 0px;
+            border: 0px solid transparent;
+        }
+
+        .textoconectar {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px;
+            background-color: #3BB398;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .imagem {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 10px;
+        }
+
+        .imagem img {
+            width: 100%;
+            height: auto;
+        }
+
+        .form-control {
+            background-color: white;
+            padding: 15px; /* mexe nos tamanhos dos botões */
+            font-size: 18px;
+            border-radius: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-bottom: -40px; /* espaçamento entre os botões */
+            margin-top: 60px; /* espaçamento entre o conecte-se e os botões */
+        }
+
+        .olho {
+            position: absolute;
+            right: 10px;
+            top: 90%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .btnentrar2 {
+            background-color: white;
+            color: #888;
+            border-radius: 5px;
+            padding: 13px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+        }
+
+        .btnentrar2:hover {
+            background-color: #f0f0f0;
+        }
+
+        .recuperar-senha-link {
+            color: white;
+            text-decoration: none;
+            margin-top: 20px;
+            align-self: flex-end;
+        }
+
+        .recuperar-senha-link:hover {
+            text-decoration: underline;
+        }
+
+        .inputcontainer {
+            position: relative;
+            margin-bottom: 25px;
+            width: 100%;
+        }
+
+        .inputcontainer input {
+            width: 100%;
+            padding: 15px 40px 15px 15px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 18px;
+            color: #888;
+            outline: none;
+        }
+
+        .senha-container i {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            font-size: 20px;
+        }
+
+        .btncontainer {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            margin-top: 20px;
+        }
+    
+
+        /*não mexer nos tamanhos da @media ass:yasmin// qualquer coisa me chame*/
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .conteudoconectese {
+                flex-direction: column;
+                height: auto;
+                max-width: 90%;
+            }
+
+            .textoconectar, .imagem {
+                border-radius: 0;
+            }
+
+            .imagem {
+                display: none;
+            }
+
+            .btncontainer {
+                justify-content: center;
+            }
+        }
+        /*não mexer nos tamanhos da @media ass:yasmin// qualquer coisa me chame*/
+        @media (max-width: 480px) {
+            .textoconectar {
+                padding: 20px;
+            }
+
+            .form-control {
+                padding: 10px;
+                font-size: 16px;
+           
+            }
+            
+            .btnentrar2 {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .recuperar-senha-link {
+                margin-top: 10px;
+                font-size: 14px;
+            }
+        }
+
+        /*não mexer nos tamanhos da @media ass:yasmin// qualquer coisa me chame*/
+        @media (min-width: 1000px) {
+            .conteudoconectese {
+                max-width: 1200px;
+                height: 80%;
+            }
+
+            .textoconectar {
+                padding: 60px;
+            }
+
+            .form-control {
+                padding: 20px;
+                font-size: 20px;
+                margin-top: 50px;
+            }
+
+            .btnentrar2 {
+                padding: 15px;
+                font-size: 18px;
+                margin-left: 20px;
+            }
+
+            .recuperar-senha-link {
+                font-size: 16px;
+            }
+        }
+
+        /*não mexer nos tamanhos da @media*/
+        @media (min-width: 1700px) {
+            .conteudoconectese {
+                max-width: 1200px;
+                height: 80%;
+            }
+
+            .textoconectar {
+                padding: 60px;
+            }
+
+            .form-control {
+                padding: 20px;
+                font-size: 20px;
+                margin-top: 80px;
+            }
+
+            .btnentrar2 {
+                padding: 15px;
+                font-size: 18px;
+            }
+
+            .recuperar-senha-link {
+                font-size: 16px;
+            }
+        }
+/*finalização da página conectar já responsiva */ 
+                /* finalização da página conectar já responsiva */
+                                      /* finalização da página conectar já responsiva */
+                                                                       /*finalização da página conectar já responsiva */
 /* ESTILO PáGINA ALUNO*/
 /* Ocultar elementos */
 
