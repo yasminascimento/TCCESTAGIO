@@ -1,3 +1,9 @@
+
+<script src="<?php echo base_url("assets/js/jquery-3.6.0.min.js"); ?>" type="text/javascript"></script>
+  <script src="<?php echo base_url("assets/js/sweetalert2.all.min.js"); ?>" type="text/javascript"></script>
+  <script src="<?php echo base_url("assets/js/bootstrap.min.js"); ?>" type="text/javascript"></script>
+
+
 /* sidebar*/
 document.getElementById('open_btn').addEventListener('click', function () {
     document.getElementById('sidebar').classList.toggle('open-sidebar');
@@ -32,6 +38,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     dataBox.textContent = `${dia < 10 ? '0' + dia : dia} ${mes}, ${ano}`;
 });
+/* mostrar senha da página conectar*/
+ function mostrarSenha() {
+    var senhaInput = document.getElementById("senhaTxt");
+    var btnSenha = document.getElementById("btn-senha");
+    var imgOlho = btnSenha.querySelector("img");
+
+    if (senhaInput.type === "password") {
+        senhaInput.type = "text";
+        imgOlho.src = "https://img.icons8.com/?size=100&id=85035&format=png&color=000000"; // Altere para a imagem de olho fechado
+    } else {
+        senhaInput.type = "password";
+        imgOlho.src = "https://img.icons8.com/?size=100&id=85028&format=png&color=000000"; // Altere para a imagem de olho aberto
+    }
+}
+
 
 
     const calendar = document.querySelector(".calendar"),
