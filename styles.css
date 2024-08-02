@@ -1233,103 +1233,24 @@ td a:hover {
     cursor:pointer
 }
 
+ /*página de CONSULTAALUNO como já responsiva */ 
+                /*página de CONSULTAALUNO como já responsiva */
+                                      /*página de CONSULTAALUNO como já responsiva */
+                                                                       /*página de CONSULTAALUNO como já responsiva */
 
 
-    .consulta-aluno{
-/* CONSULTA */
-
-position: absolute;
-width: 112px;
-height: 36px;
-left: 150px;
-top: 235px;
-
-font-family: 'Martel Sans';
-font-style: normal;
-font-weight: 800;
-font-size: 20px;
-line-height: 36px;
-
-color: #6D6C70;
-
-  /* Rectanglulo */
-
-  .filtro-retangulo{
-box-sizing: border-box;
-position: absolute;
-width: 118px;
-height: 46px;
-left: 1267px;
-top: 158px;
-border: 1px solid #3BB398;
-border-radius: 5px;
-cursor: pointer;
-
-  }
-
-  .filtro {
-/* FILTRO */
-
-margin: 0;
-        font-size: 10px;
-        color:#333;
-        font-weight: bold;
-        line-height: 40px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        text-align: center;
-  }
-
-.back{
-
-position: absolute;
-width: 50px;
-height: 50px;
-left: 194px;
-top: 50px;
 
 
-}
+ /* FINALIZAÇÃO página de CONSULTAALUNO como já responsiva */ 
+                /*FINALIZAÇÃO página de CONSULTAALUNO já responsiva */
+                                      /*FINALIZAÇÃO página de CONSULTAALUNO  já responsiva */
+                                                                       /*FINALIZAÇÃO página de CONSULTAALUNO já responsiva */
 
-.linha{
- /* Line 2 */
+/**************************************************************************************************************************************************/
 
-position: absolute;
-width: 789px;
-height: 0px;
-left: 140px;
-top: 280px;
+/**************************************************************************************************************************************************/
 
-border: 1px solid #3BB398;
- 
-}    .metrica-aluno{
-position: absolute;
-width: 843px;
-height: 53px;
-left: 150px;
-top: 150px;
-background-color: #64B09F;
-border-radius: 10px;
-
-        padding: 20px;
-    
-        text-align: center;
-        
-       
-    }
-
-    .metrica-aluno h2{
-        margin: 0;
-        font-size: 25px;
-        color:#333;
-        font-weight: bold;
-        line-height: 10px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    }
-   
-
-}
-}
-
+/**************************************************************************************************************************************************/
 
 /*página de entrar como já responsiva */ 
                 /*página de entrar como já responsiva */
