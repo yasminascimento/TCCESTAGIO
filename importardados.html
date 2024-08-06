@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Link para Font Awesome -->
 </head>
-     <header>
-
-     </header>
+<body class="importadados">
     <main>
         <div class="search-section">
             <div class="header">
@@ -17,31 +15,16 @@
                 <input type="text" placeholder="Buscar">
                 <i class="fas fa-search"></i>
             </div>
-        </div>
-         <!---barra de progressao 
-        <section class="progress-section importacao-progress-container" id="progressContainer">
-            <div class="progress-header importacao-progress-header">
-                <div class="icon importacao-progress-icon">
-                    <i class="fas fa-file-csv"></i>
-                </div>
-                <div class="file-name importacao-file-name"></div>
-            </div>
-            <div class="progress-bar importacao-progress-bar">
-                <div class="progress-bar-inner importacao-progress-bar-inner">0%</div>
-            </div>
-            <div class="file-info importacao-file-info">
-                <span class="importacao-file-size"></span>
-                <span class="cancel-icon importacao-cancel-icon"><i class="fas fa-times"></i></span>
-            </div>
-        </section>
-         <!-->
+        <!--icone"?-->
         <div class="upload-section">
             <h3>Importação de Dados</h3>
             <p>Faça upload de um arquivo com extensão em CSV, XLS ou XLSX</p>
             <input type="file" id="fileInput" accept=".csv, .xls, .xlsx" style="display: none;">
-            <button id="uploadBtn"><i class="fas fa-upload"> </i> Upload</button>
+            <button id="uploadBtn"><i class="fas fa-upload"></i> Upload</button>
+            <div class="tooltip">
+                <i class="fas fa-question-circle"></i>
+            </div>
         </div>
-        
     </main>
     <script src="teste.js"></script> 
 </body>
