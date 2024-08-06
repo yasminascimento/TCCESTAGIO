@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minha Conta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="config">
+    <div class="tabs">
+        <span class="tab active"><a href="dados.html">DADOS</a></span>
+        <span class="tab active"><a href="dados.html">SEGURANÇA</a></span>
+        <span class="tab active"><a href="minha_conta.html">MINHA CONTA</a></span>
+
+
+    <div class="content">
+        <div class="user-info" id="info">
+            <div class="profile-section">
+                <div class="profile-picture" id="info-picture">
+                    <img id="userImage" src="https://via.placeholder.com/100" width="100" height="100" alt="User Image" class="user-image">
+                    <input type="file" id="imageUpload" accept=".jpg, .jpeg, .png" onchange="previewImage(event)" style="display: none;">
+                    <label for="imageUpload" class="upload-icon"><i class="fas fa-camera-retro"></i></label>
+                </div>
+                <div class="info">
+                    <div class="column">
+                        <p><strong class="usuario">USUARIO</strong><br>maria@fatec.sp.gov</p>
+                        <p>
+                            <strong class="senha">SENHA</strong><br>
+                            <div class="password-container">
+                                <input type="password" value="kkkk" id="senha" disabled>
+                                <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('senha')"></i>
+                            </div>
+                        </p>
+                    </div>
+                    <div>
+                        <button class="edit-button" onclick="mostrarFormulario()">Alterar senha</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seção para alterar a senha -->
+        <div id="alterarSenha" style="display: none;">
+            <form id="formAlterarSenha">
+                <div class="profile-section">
+                    <div class="profile-picture" id="alterarSenha-picture">
+                        <img id="userImageAlterar" src="https://via.placeholder.com/100" width="100" height="100" alt="User Image" class="user-image">
+                    </div>
+                    <div class="form-content">
+                        <label for="usuario">Usuário:</label>
+                        <input type="text" id="usuario" value="maria@fatec.sp.gov" disabled>
+                        
+                        <label for="senhaAnterior">Senha Anterior:</label>
+                        <div class="password-container">
+                            <input type="password" id="senhaAnterior" name="senhaAnterior" required>
+                            <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('senhaAnterior')"></i>
+                        </div>
+
+                        <label for="novaSenha">Nova Senha:</label>
+                        <div class="password-container">
+                            <input type="password" id="novaSenha" name="novaSenha" required oninput="validarSenha(this.value)">
+                            <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('novaSenha')"></i>
+                        </div>
+                        
+                        <label for="confirmarSenha">Repetir Senha:</label>
+                        <div class="password-container">
+                            <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+                            <i class="fas fa-eye toggle-password" onclick="togglePasswordVisibility('confirmarSenha')"></i>
+                        </div>
+
+                        <div class="password-requirements">
+                            <p class="requirement red" id="requirementLength">*conter 8 dígitos</p>
+                            <p class="requirement red" id="requirementNumber">*conter um número</p>
+                            <p class="requirement red" id="requirementUpper">*conter uma letra maiúscula</p>
+                            <p class="requirement red" id="requirementSpecial">*conter um caractere especial</p>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" class="cancel-button" onclick="ocultarFormulario()">Cancelar</button>
+                            <button type="submit" class="save-button">Salvar</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div id="successMessage" style="display: none; color: green; text-align: center; margin-top: 20px;">
+                Sua senha foi alterada!
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePasswordVisibility(id) {
+            var input = document.getElementById(id);
+            var icon = input.nextElementSibling;
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        }
+
+        function mostrarFormulario() {
+            document.getElementById('info').style.display = 'none';
+            document.getElementById('alterarSenha').style.display = 'block';
+
+            var savedImage = localStorage.getItem('profileImage');
+            if (savedImage) {
+                document.getElementById('userImageAlterar').src = savedImage;
+            }
+        }
+
+        function ocultarFormulario() {
+            document.getElementById('info').style.display = 'block';
+            document.getElementById('alterarSenha').style.display = 'none';
+        }
+
+        function validarSenha(senha) {
+            const minLength = 8;
+            const hasNumber = /\d/;
+            const hasUpper = /[A-Z]/;
+            const hasSpecial = /[!@#$%^&*(),.?":{}|<>]/;
+
+            let valid = true;
+
+            if (senha.length >= minLength) {
+                document.getElementById('requirementLength').classList.remove('red');
+                document.getElementById('requirementLength').classList.add('green');
+            } else {
+                document.getElementById('requirementLength').classList.remove('green');
+                document.getElementById('requirementLength').classList.add('red');
+                valid = false;
+            }
+
+            if (hasNumber.test(senha)) {
+                document.getElementById('requirementNumber').classList.remove('red');
+                document.getElementById('requirementNumber').classList.add('green');
+            } else {
+                document.getElementById('requirementNumber').classList.remove('green');
+                document.getElementById('requirementNumber').classList.add('red');
+                valid = false;
+            }
+
+            if (hasUpper.test(senha)) {
+                document.getElementById('requirementUpper').classList.remove('red');
+                document.getElementById('requirementUpper').classList.add('green');
+            } else {
+                document.getElementById('requirementUpper').classList.remove('green');
+                document.getElementById('requirementUpper').classList.add('red');
+                valid = false;
+            }
+
+            if (hasSpecial.test(senha)) {
+                document.getElementById('requirementSpecial').classList.remove('red');
+                document.getElementById('requirementSpecial').classList.add('green');
+            } else {
+                document.getElementById('requirementSpecial').classList.remove('green');
+                document.getElementById('requirementSpecial').classList.add('red');
+                valid = false;
+            }
+
+            return valid;
+        }
+
+        document.getElementById('formAlterarSenha').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const senhaAnterior = document.getElementById('senhaAnterior').value;
+            const novaSenha = document.getElementById('novaSenha').value;
+            const confirmarSenha = document.getElementById('confirmarSenha').value;
+
+            if (novaSenha !== confirmarSenha) {
+                alert('A nova senha e a confirmação de senha não coincidem.');
+                return;
+            }
+
+            if (!validarSenha(novaSenha)) {
+                alert('A nova senha não atende aos requisitos.');
+                return;
+            }
+
+            // Simular a atualização da senha
+            document.getElementById('senha').value = novaSenha;
+
+            document.getElementById('formAlterarSenha').reset();
+            ocultarFormulario();
+            document.getElementById('successMessage').style.display = 'block';
+
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 3000);
+        });
+
+        // Funções para upload e pré-visualização da imagem
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('userImage');
+                var outputAlterar = document.getElementById('userImageAlterar');
+                output.src = reader.result;
+                outputAlterar.src = reader.result;
+
+                localStorage.setItem('profileImage', reader.result);
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        window.onload = function() {
+            var savedImage = localStorage.getItem('profileImage');
+            if (savedImage) {
+                document.getElementById('userImage').src = savedImage;
+                document.getElementById('userImageAlterar').src = savedImage;
+            }
+        };
+    </script>
+</body>
+</html>
