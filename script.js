@@ -618,5 +618,35 @@ document.getElementById('fileInput').addEventListener('change', function(event) 
         }
     }
 });
+//configteste//
+//pagina01//
+ function editPassword() {
+            var passwordField = document.getElementById('senha');
+            passwordField.disabled = false;
+            passwordField.focus();
+        }
+
+        function savePassword() {
+            var passwordField = document.getElementById('senha');
+            passwordField.disabled = true;
+            alert('Senha salva com sucesso!');
+        }
+
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var output = document.getElementById('userImage');
+                output.src = reader.result;
+                localStorage.setItem('profileImage', reader.result); // Salva a imagem no Local Storage
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        window.onload = function() {
+            var savedImage = localStorage.getItem('profileImage');
+            if (savedImage) {
+                document.getElementById('userImage').src = savedImage;
+            }
+        }
 
 
